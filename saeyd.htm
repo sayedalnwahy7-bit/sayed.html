@@ -1,0 +1,278 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المعجزات — كتاب المعجزات</title>
+  <style>
+    :root{--bg:#fbfbfd;--card:#ffffff;--accent:#0b74de;--text:#0b1220;--muted:#55607a}
+    *{box-sizing:border-box}
+    body{font-family:Segoe UI, Tahoma, Arial, "Noto Kufi Arabic", sans-serif;background:var(--bg);color:var(--text);margin:0;padding:20px;font-size:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    h1{font-size:1.6rem;margin:0}
+    .search{min-width:220px}
+    .container{max-width:980px;margin:18px auto}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    nav.card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(11,17,32,0.06)}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,17,32,0.06)}
+    .prophet{margin-bottom:10px}
+    .prophet h2{margin:0 0 8px 0;font-size:1.15rem}
+    ul{margin:0 0 8px 20px}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .controls{display:flex;gap:8px;align-items:center}
+    details{border-radius:8px;padding:10px}
+    summary{font-weight:600;cursor:pointer}
+    footer{margin-top:20px;text-align:center;color:var(--muted)}
+    @media(min-width:900px){.grid{grid-template-columns:260px 1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>المعجزات — كتاب المعجزات</h1>
+        <div class="muted">مجموعة مبسطة من أشهر المعجزات المنقولة عن الأنبياء عليهم السلام</div>
+      </div>
+      <div class="controls">
+        <input class="search" id="search" type="search" placeholder="ابحث عن نبي أو معجزة..." />
+        <button onclick="expandAll()">فتح الكل</button>
+        <button onclick="collapseAll()">إغلاق الكل</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <nav class="card">
+        <strong>قائمة الأنبياء</strong>
+        <ul id="toc"></ul>
+      </nav>
+
+      <section id="content">
+        <!-- Each prophet block: summary + details -->
+
+        <article class="card prophet" id="adam">
+          <details open>
+            <summary>آدم عليه السلام</summary>
+            <p class="muted">أبو البشر وأول الرسل — معجزات مرتبطة بخليقة الإنسان وتعليمه الأسماء.</p>
+            <ul>
+              <li>تعليم الله عز وجل آدم أسماء كل شيء كما ورد في القرآن (سورة البقرة:31) — علامة على العلم الإلهي.</li>
+              <li>خلق من تراب ونفخ فيه من روحه، وهذه نفسها معجزة الخلق البشري الفريد.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="noah">
+          <details>
+            <summary>نوح عليه السلام</summary>
+            <p class="muted">نبيٌ دعا قومه لسنوات طويلة وبُعث بالنار والطوفان كآيات.</p>
+            <ul>
+              <li>الطوفان العظيم الذي غرق الكافرين دون المؤمنين في السفينة التي أمر الله بصنعها.</li>
+              <li>نجاة نوح وأتباعه كسلوك لعبرة بقدرة الله على الجزاء والنجاة.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="hud">
+          <details>
+            <summary>هود عليه السلام</summary>
+            <p class="muted">أُرسل إلى عاد، أُظهرت معجزات لبيان قدرة الله على النصر والهلاك.</p>
+            <ul>
+              <li>قَذف الله عليهم ريحًا صّرصراً عاتية مدمرّة كعقاب لرفضهم الدعوة.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="salih">
+          <details>
+            <summary>صالح عليه السلام</summary>
+            <p class="muted">أُرسل إلى ثمود وأُعطيت آية الناقة.</p>
+            <ul>
+              <li>خروج الناقة من صخرة بأمر الله كآية واضحة لقوم ثمود.</li>
+              <li>انشقاق الصخر وخصائص معيشية متعلقة بالآيات التي اختبر بها قومه.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="ibrahim">
+          <details>
+            <summary>إبراهيم عليه السلام</summary>
+            <p class="muted">خليل الله، شُهر بإيمانه وثباته على التوحيد.</p>
+            <ul>
+              <li>نجاته من النار حين أُلقي فيها إحياءً بمعجزة إلهية (قصة النار التي لم تَضُرّه).</li>
+              <li>رؤيا الأضحية التي تُعدُ اختبارًا وملحمة طاعة تضمنت وقوع معجزة في قبول النية والتبديل.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="ismail">
+          <details>
+            <summary>إسماعيل عليه السلام</summary>
+            <p class="muted">ابن إبراهيم المكرم، مرتبط بقصة الكفاح والطاعة في مكة.</p>
+            <ul>
+              <li>دوره مع أبيه في بناء الكعبة والآيات المتعلقة بحفظ النسل والنسل البرّ.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="ishaq">
+          <details>
+            <summary>إسحاق ويعقوب عليهما السلام</summary>
+            <p class="muted">أجيال من الأنبياء، حاملو النبوة والإرث الإيماني.</p>
+            <ul>
+              <li>ميلاد إسحاق كاستجابة دعاء إبراهيم وسارة في الشيخوخة — معجزة حمل وولادة.</li>
+              <li>يسار يعقوب وصبره وتجدد النبوة في ذريته.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="yusuf">
+          <details>
+            <summary>يوسف عليه السلام</summary>
+            <p class="muted">قصة يوسف مملوءة بالآيات: حلم، تفسير، وسلامة من المكائد.</p>
+            <ul>
+              <li>تفسير الأحلام بصدقية ونجاح (حلم يوسف وحلم ملك مصر).</li>
+              <li>خروج عذريته برحمة الله، وظهور الحقّ أمام الظلم عبر سياق إلهي.</li>
+              <li>الوصول إلى منصب عالٍ في مصر وإنقاذ الأمة من المجاعة بفضل حكمةٍ إلهية.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="ayoub">
+          <details>
+            <summary>أيوب عليه السلام</summary>
+            <p class="muted">صبرُه الطويل وابتلاؤه نموذجٌ على ثبات الإيمان.</p>
+            <ul>
+              <li>شفاؤه بعد صبر طويل بآية شفائية إلهية، وعاد له الأهل والمال بصورة أعظم.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="shuaib">
+          <details>
+            <summary>شعيب عليه السلام</summary>
+            <p class="muted">أُرسل لقوم مدين بأمور اجتماعية وتجارية وأُعطيت آيات بيّنة.</p>
+            <ul>
+              <li>انقضاء قومه بعقوبة سماوية مرتبط بفسادهم التجاري وعدم العدل.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="musa">
+          <details>
+            <summary>موسى عليه السلام</summary>
+            <p class="muted">أعظم الأنبياء في الخروج، معه آيات كثيرة وواضحة.</p>
+            <ul>
+              <li>عصاه التي تحولت إلى أفعى ثم عادت عصًا (آية أمام فرعون وحاشيته).</li>
+              <li>يده البيضاء كآية حين يمدّها وتنبعث نورًا (آية الإثبات).</li>
+              <li>انشقاق البحر ونجاة بني إسرائيل وغرق فرعون وجنده.</li>
+              <li>إنزال المن والسلوى والعيون التي فاضت للماء في الصحراء — معجزات رزق ونجاة.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="harun">
+          <details>
+            <summary>هارون عليه السلام</summary>
+            <p class="muted">شريك موسى في الرسالة، ناصرٌ له ومعاون في البعثة.</p>
+            <ul>
+              <li>عمله الداعم لموسى في مواجهة السحر والفرعون.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="dawud">
+          <details>
+            <summary>داود عليه السلام</summary>
+            <p class="muted">ملك ونبي، ومنحه الله ملكًا وحكمة وقرارة قلب (التسابيح).</p>
+            <ul>
+              <li>مسلّة الحديد وملكه، وقدرته على القضاء والقدوة في العدل.</li>
+              <li>الزبور وكونه مُنزلًا له — معجزة في وحي وكتابة.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="sulaiman">
+          <details>
+            <summary>سليمان عليه السلام</summary>
+            <p class="muted">حكمته، وسلطانه على الريح والجن والحيوانات.</p>
+            <ul>
+              <li>الملك على الجن والرياح والطيور — قابلهم وأمرهم بإذن الله.</li>
+              <li>حكمة في القضاء وعلامات قدرة إلهية في امتداده على المخلوقات.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="zakaria">
+          <details>
+            <summary>زكريا ويحيى عليهما السلام</summary>
+            <p class="muted">آيات حمل وولادة في كِبر السن لزكريا، ويحيى مولود بقداسة.</p>
+            <ul>
+              <li>استجابة دعاء زكريا بحمل وولادة يحيى في سن متقدمة — علامة رحمة ونِعمة.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="isa">
+          <details>
+            <summary>عيسى عليه السلام</summary>
+            <p class="muted">من أعظم المعجزات: ولادته من مريم بدون أب، وشفاؤه الأعمى والأبرص.</p>
+            <ul>
+              <li>ولادة مريم العذراء بمعجزة بلا أب.</li>
+              <li>إحياء الموتى بإذن الله وشفاء المرضى، كإبراء الأعمى والأبرص.</li>
+              <li>خلق طائرٍ من طين ثم نفخ فيه فأصبح طائرًا بإذن الله — معجزة تصويرية في الإنجيل والقرآن.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card prophet" id="muhammad">
+          <details>
+            <summary>محمد صلى الله عليه وسلم</summary>
+            <p class="muted">خاتم الأنبياء، وآياته متعددة روحيًا ومعنويًا وواقعيًا.</p>
+            <ul>
+              <li>الوحي: نزول القرآن كتاب هداية معجز في بلاغته وأثره على النفوس.</li>
+              <li>الإسراء والمعراج: رحلة روحية ومعجزة في السماء والأرض.</li>
+              <li>انشقاق القمر (مرويًا في بعض النصوص) ومعجزات أخرى متناهية الدلالة والغاية.</li>
+            </ul>
+          </details>
+        </article>
+
+        <p class="muted">هل تريد أن أطوّل في كل نبي بمصادر ونصوص تفصيلية؟ أو تفضّل ملف HTML جاهز للتحميل؟</p>
+
+      </section>
+    </main>
+
+    <footer class="muted">الموقع مُبسّط لغرض التعليم — يمكن تعديل النصوص، إضافة صور، أو ربط مصادر أولية عند الطلب.</footer>
+  </div>
+
+  <script>
+    // Build table of contents
+    const toc = document.getElementById('toc');
+    document.querySelectorAll('.prophet').forEach(block => {
+      const id = block.id;
+      const title = block.querySelector('summary').innerText;
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#'+id;
+      a.textContent = title;
+      a.onclick = () => setTimeout(()=>{
+        const details = block.querySelector('details'); details.open = true; window.scrollTo({top:block.offsetTop-20,behavior:'smooth'})
+      },10);
+      li.appendChild(a); toc.appendChild(li);
+    });
+
+    // Search
+    const search = document.getElementById('search');
+    search.addEventListener('input', ()=>{
+      const q = search.value.trim();
+      document.querySelectorAll('.prophet').forEach(block=>{
+        const text = block.innerText;
+        if(!q) { block.style.display='block'; return }
+        block.style.display = text.includes(q) ? 'block':'none';
+      })
+    });
+
+    function expandAll(){ document.querySelectorAll('details').forEach(d=>d.open=true) }
+    function collapseAll(){ document.querySelectorAll('details').forEach(d=>d.open=false) }
+  </script>
+</body>
+</html>
